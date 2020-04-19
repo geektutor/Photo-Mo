@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\photos-sharing-master\\build\\fluttertoast\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c341bef18de473e0426b9295f2756e70\\res\\drawable-xhdpi-v4\\notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\photos-sharing-master\\build\\fluttertoast\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c341bef18de473e0426b9295f2756e70\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\photos-sharing-master\\build\\fluttertoast\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\notification_bg_normal.9.png",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c341bef18de473e0426b9295f2756e70\\res\\drawable-xhdpi-v4\\notification_bg_normal.9.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\photos-sharing-master\\build\\fluttertoast\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c341bef18de473e0426b9295f2756e70\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "C:\\Users\\User\\AndroidStudioProjects\\photos-sharing-master\\build\\fluttertoast\\intermediates\\res\\merged\\release\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png",
+        "source": "C:\\Users\\User\\.gradle\\caches\\transforms-1\\files-1.1\\core-1.0.0.aar\\c341bef18de473e0426b9295f2756e70\\res\\drawable-xhdpi-v4\\notification_bg_low_pressed.9.png"
+    }
+]

@@ -85,33 +85,68 @@ class _TripPageState extends State<TripPage> {
   }
 
   Future<void> _shareAlbum(BuildContext context) async {
-    // TODO(codelab): Implement this method.
-    ToBeImplemented.showMessage();
-
-    // If the album is not shared yet, call the Library API to share it and
-    // update the local model
-
-    // Once the album contains the shareInfo data, display its share token
+    // Show the loading indicator
+    setState(() {
+      _inSharingApiCall = true;
+    });
+    final SnackBar snackBar = SnackBar(
+      duration: Duration(seconds: 3),
+      content: const Text('Sharing Album...'),
+    );
+    Scaffold.of(context).showSnackBar(snackBar);
+    // Share the album and update the local model
+    await ScopedModel.of<PhotosLibraryApiModel>(context).shareAlbum(album.id);
+    final Album updatedAlbum =
+    await ScopedModel.of<PhotosLibraryApiModel>(context).getAlbum(album.id);
+    print('Album has been shared.');
+    setState(() {
+      album = updatedAlbum;
+      // Hide the loading indicator
+      _inSharingApiCall = false;
+    });
   }
 
   void _showShareableUrl(BuildContext context) {
-    // TODO(codelab): Implement this method.
-    ToBeImplemented.showMessage();
+    if (album.shareInfo == null || album.shareInfo.shareableUrl == null) {
+      print('Not shared, sharing album first.');
+      // Album is not shared yet, share it first, then display dialog
+      _shareAlbum(context).then((_) {
+        _showUrlDialog(context);
+      });
+    } else {
+      // Album is already shared, display dialog with URL
+      _showUrlDialog(context);
+    }
   }
 
   void _showShareToken(BuildContext context) {
-    // TODO(codelab): Implement this method.
-    ToBeImplemented.showMessage();
+    if (album.shareInfo == null) {
+      print("Not shared, sharing album first.");
+      // Album is not shared yet, share it first, then display dialog
+      _shareAlbum(context).then((_) {
+        _showTokenDialog(context);
+      });
+    } else {
+      // Album is already shared, display dialog with token
+      _showTokenDialog(context);
+    }
   }
 
   void _showTokenDialog(BuildContext context) {
-    // TODO(codelab): Implement this method.
-    ToBeImplemented.showMessage();
+    print('This is the shareToken:\n${album.shareInfo.shareToken}');
+
+    _showShareDialog(
+        context, 'Use this token to share', album.shareInfo.shareToken);
   }
 
   void _showUrlDialog(BuildContext context) {
-    // TODO(codelab): Implement this method.
-    ToBeImplemented.showMessage();
+    print('This is the shareableUrl:\n${album.shareInfo.shareableUrl}');
+
+      _showShareDialog(
+          context,
+          'Share this URL with anyone. '
+              'Anyone with this URL can access all items.',
+          album.shareInfo.shareableUrl);
   }
 
   void _showShareDialog(BuildContext context, String title, String text) {

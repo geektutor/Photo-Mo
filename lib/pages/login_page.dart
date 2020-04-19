@@ -43,7 +43,7 @@ class LoginPage extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(30),
               child: const Text(
-                'Trips from Field Trippa will be stored as shared albums in '
+                'Trips with Photo Mo will be stored as shared albums in '
                     'Google Photos',
                 textAlign: TextAlign.center,
                 style: TextStyle(

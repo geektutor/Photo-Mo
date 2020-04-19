@@ -53,7 +53,7 @@ class TripListPage extends StatelessWidget {
             children: <Widget>[
               SvgPicture.asset(
                 'assets/ic_fieldTrippa.svg',
-                color: Colors.grey[300],
+                color: Colors.blue[300],
                 height: 148,
               ),
               Container(
@@ -145,7 +145,7 @@ class TripListPage extends StatelessWidget {
         padding: const EdgeInsets.all(5),
         child: SvgPicture.asset(
           'assets/ic_fieldTrippa.svg',
-          color: Colors.grey[350],
+          color: Colors.blue[350],
         ),
       );
     }
@@ -190,7 +190,7 @@ class TripListPage extends StatelessWidget {
             ),
           ),
           FlatButton(
-            textColor: Colors.green[800],
+            textColor: Colors.blueGrey[800],
             onPressed: () {
               Navigator.push(
                 context,
@@ -212,7 +212,7 @@ class TripListPage extends StatelessWidget {
           padding: EdgeInsets.only(right: 8),
           child: Icon(
             Icons.folder_shared,
-            color: Colors.black38,
+            color: Colors.blueGrey,
           ));
     } else {
       return Container();

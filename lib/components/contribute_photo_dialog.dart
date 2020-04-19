@@ -88,7 +88,8 @@ class _ContributePhotoDialogState extends State<ContributePhotoDialog> {
     // Otherwise, the upload has completed and an upload token is set
     return RaisedButton(
       child: const Text('ADD'),
-      onPressed: () => Navigator.pop(
+      onPressed: () =>
+          Navigator.pop(
             context,
             ContributePhotoResult(
               _uploadToken,
@@ -133,18 +134,27 @@ class _ContributePhotoDialogState extends State<ContributePhotoDialog> {
   Future _getImage(BuildContext context) async {
     // TODO(codelab): Implement this method.
 
-    ToBeImplemented.showMessage();
-
-    // Use the image_picker package to prompt the user for a photo from their
-    // device.
+    final File image = await ImagePicker.pickImage(
+      source: ImageSource.camera,
+    );
 
     // Store the image that was selected.
+    setState(() {
+      _image = image;
+      _isUploading = true;
+    });
 
     // Make a request to upload the image to Google Photos once it was selected.
+    final String uploadToken =
+    await ScopedModel.of<PhotosLibraryApiModel>(context)
+        .uploadMediaItem(image);
 
-
+    setState(() {
       // Once the upload process has completed, store the upload token.
       // This token is used together with the description to create the media
       // item later.
+      _uploadToken = uploadToken;
+      _isUploading = false;
+    });
   }
 }
